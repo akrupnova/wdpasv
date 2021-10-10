@@ -22,13 +22,13 @@ describe('Auth', () => {
         await expect(LoginPage.emailValidation).toHaveTextContaining('\'email\' is not a valid email');
     });
 
-    it('email rewired validation', async () => {
+    it.only('email required validation', async () => {
         await LoginPage.inputEmail.setValue('wrong@wrong.com');
         await LoginPage.inputEmail.smartClear();
         await expect(LoginPage.emailValidation).toHaveTextContaining('Required');
     });
 
-    it('email rewired validation', async () => {
+    it('email required validation', async () => {
         await LoginPage.inputPassword.setValue('wrong');
         await LoginPage.inputPassword.smartClear();
         await expect(LoginPage.passwordValidation).toHaveTextContaining('Required');
