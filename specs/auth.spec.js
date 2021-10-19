@@ -1,5 +1,5 @@
 import LoginPage from  '../pages/login.page';
-import ProfilePAge from '../pages/profile.page';
+import ProfilePAge from '../pages/app/profile.page';
 
 describe('Auth', () => {
     beforeEach (async () => {
@@ -7,7 +7,7 @@ describe('Auth', () => {
     });
 
     it('successful log in', async () => {
-        await LoginPage.login('anna.krupnovaa@gmail.com', '123zxc!!');
+        await LoginPage.login(process.env.LOGIN, process.env.PASSWORD);
         await expect(ProfilePAge.iconAvatar).toBeDisplayed();
     });
 
@@ -22,14 +22,14 @@ describe('Auth', () => {
         await expect(LoginPage.emailValidation).toHaveTextContaining('\'email\' is not a valid email');
     });
 
-    it.only('email required validation', async () => {
-        await LoginPage.inputEmail.setValue('wrong@wrong.com');
+    it('email required validation', async () => {
+        await LoginPage.inputEmail.setValue('invalid@example.com');
         await LoginPage.inputEmail.smartClear();
         await expect(LoginPage.emailValidation).toHaveTextContaining('Required');
     });
 
-    it('email required validation', async () => {
-        await LoginPage.inputPassword.setValue('wrong');
+    it('password required validation', async () => {
+        await LoginPage.inputPassword.setValue('invalid');
         await LoginPage.inputPassword.smartClear();
         await expect(LoginPage.passwordValidation).toHaveTextContaining('Required');
     });

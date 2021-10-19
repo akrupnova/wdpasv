@@ -15,7 +15,9 @@
   "author": "Anna Krupnova",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^7.10.0"
+    "@wdio/cli": "^7.10.0",
+    "axios": "^0.23.0",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
