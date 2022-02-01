@@ -8,7 +8,7 @@ exports.config = merge(baseConf.config, {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
-            args: ['--window-size=1280,720']
+            args: ['--window-size=1280,850']
         },
     }],
 }, { clone: false });

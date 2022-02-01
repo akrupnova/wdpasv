@@ -25,8 +25,8 @@ async function getAuthData() {
     };
     await axios.post(url, body)
         .then((res) => {
-            process.env.TOKEN = res.data.token;
-            process.env.USERID = res.data.userId;
+            process.env.TOKEN = res.data.payload.token;
+            process.env.USERID = res.data.payload.userId;
         });
 }
 
