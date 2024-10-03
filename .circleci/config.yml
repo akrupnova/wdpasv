@@ -45,12 +45,6 @@ workflows:
               only:
                 - main
 
-  nightly:
-    triggers:
-      - schedule:
-          filters:
-            branches:
-              only:
-                - main
+
     jobs:
       - build-and-test
